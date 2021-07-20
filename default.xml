@@ -7,60 +7,74 @@
     See go/side-branch-testing for details.
 -->
 
+    <!--- use aosp android repo as code base -->
   <remote  name="aosp"
-           fetch=".."
+           fetch="https://android.googlesource.com/"
            review="https://android-review.googlesource.com/" />
+
+  <!--- use tsinghua android repo as code base
+  <remote  name="tsinghua"
+           fetch="https://mirrors.tuna.tsinghua.edu.cn/git/AOSP"
+           review="https://android-review.googlesource.com/" />
+  <default revision="master"
+           remote="tsinghua"
+           sync-j="4" />
+  -->
+
+  <remote  name="riscv-android"
+           fetch=".."
+           review="" />
   <default revision="master"
            remote="aosp"
            sync-j="4" />
 
   <!-- Core LLVM toolchain components -->
-  <project path="bionic" name="platform/bionic" />
-  <project path="toolchain/binutils" name="toolchain/binutils" />
-  <project path="toolchain/llvm-project" name="toolchain/llvm-project"
-           revision="master-legacy" />
-  <project path="toolchain/llvm_android" name="toolchain/llvm_android" />
+  <project path="bionic" name="platform-bionic" remote="riscv-android" revision="riscv-llvm-toolchain-android-10_dev" />
+  <project path="toolchain/binutils" name="toolchain/binutils" revision="c19795e958ed532462948fd14b1bdfd4f6e96e03" />
+  <project path="toolchain/llvm-project" name="toolchain-llvm-project" remote="riscv-android" revision="riscv-llvm-toolchain-android-10_dev" />
+  <project path="toolchain/llvm_android" name="toolchain-llvm_android" remote="riscv-android" revision="riscv-llvm-toolchain-android-10_dev" />
 
   <!-- Android/ChromeOS shared toolchain-utils -->
-  <project path="external/toolchain-utils" name="platform/external/toolchain-utils" revision="master" />
+  <project path="external/toolchain-utils" name="platform/external/toolchain-utils" revision="b8e15db27661a92ec12ae2af66bc6987929c87f8" />
 
   <!-- Binutils/gcc toolchains -->
-  <project path="prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" groups="pdk,darwin,arm" clone-depth="1" />
-  <project path="prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" clone-depth="1" />
-  <project path="prebuilts/gcc/darwin-x86/host/headers" name="platform/prebuilts/gcc/darwin-x86/host/headers" groups="pdk,darwin" clone-depth="1" />
-  <project path="prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" groups="pdk,darwin" clone-depth="1" />
-  <project path="prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" groups="pdk,darwin,x86" clone-depth="1" />
-  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" groups="pdk,linux,arm" clone-depth="1" />
-  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" clone-depth="1" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" clone-depth="1" />
-  <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" groups="pdk,linux,x86" clone-depth="1" />
+  <project path="prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" groups="pdk,darwin,arm" clone-depth="1" revision="e3c9192408e0ad4fa1a7b39f111dac93aef4dca8" />
+  <project path="prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" clone-depth="1" revision="9081aab4f83e15d4e097b24b4edd6bac33439351" />
+  <project path="prebuilts/gcc/darwin-x86/host/headers" name="platform/prebuilts/gcc/darwin-x86/host/headers" groups="pdk,darwin" clone-depth="1" revision="4ac4f7cc41cf3c9e36fc3d6cf37fd1cfa9587a68" />
+  <project path="prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" groups="pdk,darwin" clone-depth="1" revision="b616fc20ee024ace07f39b13a1f5a2bbdb67f8f7" />
+  <project path="prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" groups="pdk,darwin,x86" clone-depth="1" revision="3eb882505ec463db6ebaae9b2db27fea1dfa888e" />
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" groups="pdk,linux,arm" clone-depth="1" revision="6db7620069bbcac51474f5e4b0691071273f589a" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" clone-depth="1" revision="1d67e7fe709e8f81e91e5f85a5d4c04b27c6b319" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" revision="90e45fec56fdeac84c9eb174c63fa6e748c6faa9" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" clone-depth="1" revision="4efc2a937f271a766ad1c11eb930d6e150ecb694" />
+  <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" groups="pdk,linux,x86" clone-depth="1" revision="6d6c9c7e26cf86eafd41b9e73840c7f8d50d1027" />
+  <project path="prebuilts/gcc/linux-x86/riscv64/riscv64-linux-android-8.1" name="platform-prebuilts-gcc-linux-x86-riscv64-riscv64-linux-android-8.1" groups="pdk,linux,x86" clone-depth="1" remote="riscv-android" revision="riscv-llvm-toolchain-android-10_dev" />
 
   <!-- CMake prebuilts -->
-  <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" clone-depth="1" />
-  <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" clone-depth="1" />
+  <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" clone-depth="1" revision="0a604d875f3b623c786e4a7dc3eb0abc8940b4d7" />
+  <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" clone-depth="1" revision="e934e8c0628ca79de8a8d45dd8869bf750f597e9" />
 
   <!-- build-tools prebuilts (includes ninja) -->
-  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" />
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" revision="f612a0670cc68f19fa7e968fa6fd966f56bcf224" />
 
   <!-- Go prebuilts -->
-  <project path="prebuilts/go/darwin-x86" name="platform/prebuilts/go/darwin-x86" groups="darwin,pdk,tradefed" clone-depth="1" />
-  <project path="prebuilts/go/linux-x86" name="platform/prebuilts/go/linux-x86" groups="linux,pdk,tradefed" clone-depth="1" />
+  <project path="prebuilts/go/darwin-x86" name="platform/prebuilts/go/darwin-x86" groups="darwin,pdk,tradefed" clone-depth="1" revision="748609c914d883228a9381c6be86623984d68a2b" />
+  <project path="prebuilts/go/linux-x86" name="platform/prebuilts/go/linux-x86" groups="linux,pdk,tradefed" clone-depth="1" revision="7f4776e1ddb05395a4025a30de8d7b78d62ac9aa" />
 
   <!-- Dependencies for lldb -->
-  <project path="external/libedit" name="platform/external/libedit" />
-  <project path="external/swig" name="platform/external/swig" />
+  <project path="external/libedit" name="platform/external/libedit" revision="892b8b381ae82ac3184900d989a516854d8b1197" />
+  <project path="external/swig" name="platform/external/swig" revision="0ffab894f917fcbbd031eaab870fbabaefe5daaa" />
 
   <!-- Python prebuilts -->
-  <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" clone-depth="1" revision="llvm-toolchain" />
-  <project path="prebuilts/python/darwin-x86" name="platform/prebuilts/python/darwin-x86" clone-depth="1" revision="llvm-toolchain" />
-  <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1" revision="llvm-toolchain" />
+  <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" clone-depth="1" revision="5e446122645ad107dfdcb8701141a52a94b8d972" />
+  <project path="prebuilts/python/darwin-x86" name="platform/prebuilts/python/darwin-x86" clone-depth="1" revision="08182aaf90eff9733c5b36d599f2446cc87d57eb" />
+  <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1" revision="3f74d43a095e6a515f309f9d56e7621854d4be22" />
 
   <!-- Prebuilts (for ease of updating) -->
-  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1" />
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" />
-  <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1" />
+  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1" revision="99133c907b2e4ea17669821a6f846feb16fd7ca3" />
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" revision="8539e6c8e61390f065090d1a1c04ec95107c8621" />
+  <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1" revision="e790afabfe385559d5ccce2b9c56ba8b3f45fb55" />
 
   <!-- NDK headers/libraries -->
-  <project path="toolchain/prebuilts/ndk/r20" name="toolchain/prebuilts/ndk/r20" />
+  <project path="toolchain/prebuilts/ndk/r20" name="toolchain-prebuilts-ndk-r20" remote="riscv-android" revision="riscv-llvm-toolchain-android-10_dev" />
 </manifest>
