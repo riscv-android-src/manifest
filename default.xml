@@ -6,18 +6,37 @@
     project rule in google3 to ensure new projects get testing.
     See go/side-branch-testing for details.
 -->
+  <!--- use aosp android repo as code base -->
   <remote  name="aosp"
-           fetch=".."
+           fetch="https://android.googlesource.com/"
            review="https://android-review.googlesource.com/" />
+
+  <!--- use tsinghua android repo as code base
+  <remote  name="tsinghua"
+           fetch="https://mirrors.tuna.tsinghua.edu.cn/git/AOSP"
+           review="https://android-review.googlesource.com/" />
+  <default revision="master"
+           remote="tsinghua"
+           sync-j="4" />
+  -->
+
+  <remote  name="riscv-android"
+           fetch=".."
+           review="" />
   <default revision="llvm-r416183"
            remote="aosp"
            sync-j="4" />
+
+  <!-- RISCV changed -->
+  <project path="bionic" name="platform-bionic" remote="riscv-android" revision="riscv-llvm-r416183_dev"/>
+  <project path="toolchain/llvm-project" name="toolchain-llvm-project" remote="riscv-android" revision="riscv-llvm-r416183_dev"/>
+  <project path="toolchain/llvm_android" name="toolchain-llvm_android" remote="riscv-android" revision="riscv-llvm-r416183_dev"/>
+  <project path="prebuilts/gcc/linux-x86/riscv64/riscv64-linux-android-8.1" name="platform-prebuilts-gcc-linux-x86-riscv64-riscv64-linux-android-8.1" groups="pdk,linux,riscv64" clone-depth="1" remote="riscv-android" revision="riscv-llvm-r416183_dev" />
+  <!-- NDK headers/libraries -->
+  <project path="toolchain/prebuilts/ndk/r23" name="toolchain/prebuilts/ndk/r23" />
+
   <!-- Core LLVM toolchain components -->
-  <project path="bionic" name="platform/bionic" />
   <project path="toolchain/binutils" name="toolchain/binutils" />
-  <project path="toolchain/llvm-project" name="toolchain/llvm-project"
-            />
-  <project path="toolchain/llvm_android" name="toolchain/llvm_android" />
   <!-- Android/ChromeOS shared toolchain-utils -->
   <project path="external/toolchain-utils" name="platform/external/toolchain-utils"  />
   <!-- Binutils/gcc toolchains -->
@@ -53,6 +72,4 @@
   <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1" />
   <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" />
   <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1" />
-  <!-- NDK headers/libraries -->
-  <project path="toolchain/prebuilts/ndk/r23" name="toolchain/prebuilts/ndk/r23" />
 </manifest>
