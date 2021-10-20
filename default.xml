@@ -1,15 +1,31 @@
 <?xml version='1.0' encoding='UTF-8'?>
 
 <manifest>
-  <remote name="aosp" fetch="https://android-review.googlesource.com/" review="https://android-review.googlesource.com/" />
+  <!--- use aosp android repo as code base -->
+  <remote  name="aosp"
+           fetch="https://android.googlesource.com/"
+           review="https://android-review.googlesource.com/" />
+
+  <!--- use tsinghua android repo as code base
+  <remote  name="tsinghua"
+           fetch="https://mirrors.tuna.tsinghua.edu.cn/git/AOSP"
+           review="https://android-review.googlesource.com/" />
+  <default revision="master"
+           remote="tsinghua"
+           sync-j="4" />
+  -->
+
+  <remote  name="riscv-android"
+           fetch=".."
+           review="" />
 
   <default revision="master" remote="aosp" />
 
-  <project path="toolchain/rustc" name="toolchain/rustc" revision="59fbe18bc79ed87d0c5f02705e7cf19e402e1f2b" />
+  <project path="toolchain/rustc" name="toolchain-rustc" remote="riscv-android" revision="riscv64-android12-rust-toolchain-dev" />
 
-  <project path="toolchain/android_rust" name="toolchain/android_rust" revision="358777148761adaeb5f1f8e848abf237af957abd" />
+  <project path="toolchain/android_rust" name="toolchain-android_rust" remote="riscv-android" revision="riscv64-android12-rust-toolchain-dev" />
 
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" revision="f1f811bf92a374cabb7d8f413f212447bd2ed822" />
+  <project path="prebuilts/clang/host/linux-x86" name="platform-prebuilts-clang-host-linux-x86" clone-depth="1" remote="riscv-android" revision="riscv64-android12-rust-toolchain-dev" />
 
   <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1" revision="a9eabd0871d67b910ca4a753ef6c00e5ec68693a" />
 
@@ -37,5 +53,5 @@
 
   <project path="prebuilts/rust" name="platform/prebuilts/rust" clone-depth="1" revision="6256d4421c446189caa6c8b766948883266f51d6" />
 
-  <project path="toolchain/prebuilts/ndk/r20" name="toolchain/prebuilts/ndk/r20" clone-depth="1" revision="090bbcaa361eb158e8bfc5e6950081cb9679e350" />
+  <project path="toolchain/prebuilts/ndk/r20" name="toolchain-prebuilts-ndk-r20" clone-depth="1" remote="riscv-android" revision="riscv64-android12-rust-toolchain-dev" />
 </manifest>
