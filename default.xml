@@ -16,7 +16,7 @@
   -->
 
   <remote  name="riscv-android"
-           fetch=".."
+           fetch="https://github.com/riscv-android-src"
            review="" />
 
   <default revision="master" remote="aosp" />
