@@ -33,7 +33,7 @@
   <project path="toolchain/llvm_android" name="toolchain-llvm_android" remote="riscv-android" revision="riscv-llvm-r416183_dev"/>
   <project path="prebuilts/gcc/linux-x86/riscv64/riscv64-linux-android-8.1" name="platform-prebuilts-gcc-linux-x86-riscv64-riscv64-linux-android-8.1" groups="pdk,linux,riscv64" clone-depth="1" remote="riscv-android" revision="riscv-llvm-r416183_dev" />
   <!-- NDK headers/libraries -->
-  <project path="toolchain/prebuilts/ndk/r23" name="toolchain/prebuilts/ndk/r23" remote="riscv-android" revision="riscv-llvm-r416183_dev" />
+  <project path="toolchain/prebuilts/ndk/r23" name="toolchain-prebuilts-ndk-r23" remote="riscv-android" revision="riscv-llvm-r416183_dev" />
 
   <!-- Core LLVM toolchain components -->
   <project path="toolchain/binutils" name="toolchain/binutils" />
