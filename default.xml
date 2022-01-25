@@ -90,9 +90,11 @@
   <project path="frameworks/proto_logging" name="platform-frameworks-proto_logging" groups="pdk-cw-fs,pdk-fs" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
 
   <project path="hardware/interfaces" name="platform-hardware-interfaces" groups="pdk" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
+  <project path="kernel/prebuilts/5.10/riscv64" name="kernel-prebuilts-5.10-riscv64" groups="pdk" remote="riscv-android" clone-depth="1" revision="riscv64-android-12.0.0_dev" />
   <project path="platform_testing" name="platform-platform_testing" groups="pdk-fs,pdk-cw-fs,cts" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="packages/apps/Bluetooth" name="platform-packages-apps-Bluetooth" groups="pdk-cw-fs,pdk-fs" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="packages/apps/Camera2" name="platform-packages-apps-Camera2" groups="pdk-fs" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
+  <project path="packages/modules/ArtPrebuilt" name="platform-packages-modules-ArtPrebuilt" groups="pdk" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="packages/modules/DnsResolver" name="platform-packages-modules-DnsResolver" groups="pdk-cw-fs,pdk-fs" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="packages/modules/common" name="platform-packages-modules-common" groups="pdk-cw-fs,pdk-fs" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="packages/modules/NeuralNetworks" name="platform-packages-modules-NeuralNetworks" groups="pdk-cw-fs,pdk-fs" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
@@ -100,6 +102,7 @@
   <project path="prebuilts/abi-dumps/vndk" name="platform-prebuilts-abi-dumps-vndk" groups="pdk-fs" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="prebuilts/build-tools" name="platform-prebuilts-build-tools" groups="pdk" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="prebuilts/clang/host/linux-x86" name="platform-prebuilts-clang-host-linux-x86" groups="pdk" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
+  <project path="prebuilts/android-emulator" name="platform-prebuilts-android-emulator" groups="pdk-fs" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="prebuilts/misc" name="platform-prebuilts-misc" groups="pdk" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="prebuilts/ndk" name="platform-prebuilts-ndk" groups="pdk" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="prebuilts/runtime" name="platform-prebuilts-runtime" groups="pdk" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
@@ -924,7 +927,6 @@
   <project path="packages/inputmethods/LatinIME" name="platform/packages/inputmethods/LatinIME" groups="pdk-fs" />
   <project path="packages/inputmethods/LeanbackIME" name="platform/packages/inputmethods/LeanbackIME" groups="pdk-fs" />
   <project path="packages/modules/adb" name="platform/packages/modules/adb" groups="pdk" />
-  <project path="packages/modules/ArtPrebuilt" name="platform/packages/modules/ArtPrebuilt" groups="pdk" clone-depth="1" />
   <project path="packages/modules/BootPrebuilt/5.4/arm64" name="platform/packages/modules/BootPrebuilt/5.4/arm64" groups="pdk" clone-depth="1" />
   <project path="packages/modules/BootPrebuilt/5.10/arm64" name="platform/packages/modules/BootPrebuilt/5.10/arm64" groups="pdk" clone-depth="1" />
   <project path="packages/modules/CaptivePortalLogin" name="platform/packages/modules/CaptivePortalLogin" groups="pdk-cw-fs,pdk-fs" />
@@ -972,7 +974,6 @@
   <project path="pdk" name="platform/pdk" groups="pdk" />
   <project path="prebuilts/abi-dumps/ndk" name="platform/prebuilts/abi-dumps/ndk" groups="pdk-fs" clone-depth="1" />
   <project path="prebuilts/abi-dumps/platform" name="platform/prebuilts/abi-dumps/platform" groups="pdk-fs" clone-depth="1" />
-  <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" groups="pdk-fs" clone-depth="1" />
   <project path="prebuilts/asuite" name="platform/prebuilts/asuite" groups="pdk" clone-depth="1" />
   <project path="prebuilts/bazel/darwin-x86_64" name="platform/prebuilts/bazel/darwin-x86_64" groups="darwin,pdk" clone-depth="1" />
   <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" groups="linux,pdk" clone-depth="1" />
