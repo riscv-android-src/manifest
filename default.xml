@@ -128,6 +128,7 @@
   <project path="system/unwinding" name="platform-system-unwinding" groups="pdk" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="test/mlts/benchmark" name="platform-test-mlts-benchmark" groups="pdk" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="test/vts-testcase/hal" name="platform-test-vts-testcase-hal" groups="vts,pdk" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
+  <project path="tools/tradefederation/core" name="platform-tools-tradefederation" groups="pdk,tradefed" remote="riscv-android" revision="riscv64-android-12.0.0_dev"/>
 
   <!-- default changed aosp public git. -->
   <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" />
@@ -1070,6 +1071,7 @@
   <project path="test/app_compat/csuite" name="platform/test/app_compat/csuite" />
   <project path="test/cts-root" name="platform/test/cts-root" />
   <project path="test/mts" name="platform/test/mts" />
+  <project path="test/suite_harness" name="platform/test/suite_harness" groups="cts,pdk-cw-fs,pdk-fs" revision="android-s-beta-4"/>
   <project path="test/vti/dashboard" name="platform/test/vti/dashboard" groups="vts,projectarch,pdk" />
   <project path="test/vti/fuzz_test_serving" name="platform/test/vti/fuzz_test_serving" groups="vts,projectarch,pdk" />
   <project path="test/vti/test_serving" name="platform/test/vti/test_serving" groups="vts,projectarch,pdk" />
@@ -1100,6 +1102,7 @@
   <project path="tools/external_updater" name="platform/tools/external_updater" groups="tools" />
   <project path="tools/external/fat32lib" name="platform/tools/external/fat32lib" groups="tools" />
   <project path="tools/idea" name="platform/tools/idea" groups="notdefault,tools" />
+  <project path="tools/loganalysis" name="platform/tools/loganalysis" groups="nopresubmit,pdk,tradefed" revision="android-s-beta-4"/>
   <project path="tools/metalava" name="platform/tools/metalava" groups="pdk,tools" />
   <project path="tools/motodev" name="platform/tools/motodev" groups="notdefault,motodev" />
   <project path="tools/platform-compat" name="tools/platform-compat" groups="pdk-cw-fs,pdk-fs,pdk" />
@@ -1112,6 +1115,7 @@
   <project path="tools/test/graphicsbenchmark" name="platform/tools/test/graphicsbenchmark" groups="pdk" />
   <project path="tools/test/openhst" name="platform/tools/test/openhst" groups="tools" />
   <project path="tools/tradefederation/prebuilts" name="platform/tools/tradefederation/prebuilts" groups="pdk,tradefed" />
+  <project path="tools/tradefederation/contrib" name="platform/tools/tradefederation/contrib" groups="pdk,tradefed" revision="android-s-beta-4"/>
   <project path="tools/treble" name="platform/tools/treble" groups="tools,pdk" />
   <project path="tools/trebuchet" name="platform/tools/trebuchet" groups="tools,cts,pdk,pdk-cw-fs,pdk-fs" />
 
