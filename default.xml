@@ -94,7 +94,7 @@
   <project path="frameworks/proto_logging" name="platform-frameworks-proto_logging" groups="pdk-cw-fs,pdk-fs" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
 
   <project path="hardware/interfaces" name="platform-hardware-interfaces" groups="pdk" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
-  <project path="kernel/prebuilts/5.10/riscv64" name="kernel-prebuilts-5.10-riscv64" groups="pdk" remote="riscv-android" clone-depth="1" revision="riscv64-android-12.0.0_dev" />
+  <project path="kernel/prebuilts/5.10/riscv64" name="kernel-prebuilts-5.10-riscv64" groups="pdk" remote="riscv-android" clone-depth="1" revision="riscv64-android-12.0.0_dev_bk" />
   <project path="libcore" name="platform-libcore" groups="pdk" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="platform_testing" name="platform-platform_testing" groups="pdk-fs,pdk-cw-fs,cts" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="packages/apps/Bluetooth" name="platform-packages-apps-Bluetooth" groups="pdk-cw-fs,pdk-fs" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
@@ -103,10 +103,12 @@
   <project path="packages/modules/common" name="platform-packages-modules-common" groups="pdk-cw-fs,pdk-fs" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="packages/modules/NeuralNetworks" name="platform-packages-modules-NeuralNetworks" groups="pdk-cw-fs,pdk-fs" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="packages/services/Car" name="platform-packages-services-Car" groups="pdk-cw-fs,pdk-fs" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
+  <project path="prebuilts/abi-dumps/ndk" name="platform-prebuilts-abi-dumps-ndk" groups="pdk-fs" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
+  <project path="prebuilts/abi-dumps/platform" name="platform-prebuilts-abi-dumps-platform" groups="pdk-fs" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="prebuilts/abi-dumps/vndk" name="platform-prebuilts-abi-dumps-vndk" groups="pdk-fs" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="prebuilts/build-tools" name="platform-prebuilts-build-tools" groups="pdk" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="prebuilts/clang/host/linux-x86" name="platform-prebuilts-clang-host-linux-x86" groups="pdk" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
-  <project path="prebuilts/android-emulator" name="platform-prebuilts-android-emulator" groups="pdk-fs" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
+  <project path="prebuilts/android-emulator" name="platform-prebuilts-android-emulator" groups="pdk-fs" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev_bk" />
   <project path="prebuilts/misc" name="platform-prebuilts-misc" groups="pdk" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="prebuilts/ndk" name="platform-prebuilts-ndk" groups="pdk" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="prebuilts/runtime" name="platform-prebuilts-runtime" groups="pdk" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
@@ -127,7 +129,29 @@
   <project path="system/netd" name="platform-system-netd" groups="pdk" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="system/unwinding" name="platform-system-unwinding" groups="pdk" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="test/mlts/benchmark" name="platform-test-mlts-benchmark" groups="pdk" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
+  <project path="test/vts" name="platform-test-vts" groups="vts,pdk" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="test/vts-testcase/hal" name="platform-test-vts-testcase-hal" groups="vts,pdk" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
+  <project path="test/vts-testcase/vndk" name="platform-test-vts-testcase-vndk" groups="vts,pdk" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
+  <project path="test/catbox" name="platform/test/catbox" />
+  <project path="toolchain/benchmark" name="toolchain/benchmark" />
+  <project path="toolchain/pgo-profiles" name="toolchain/pgo-profiles" groups="pdk" />
+  <project path="tools/aadevtools" name="platform/tools/aadevtools" groups="pdk" />
+  <project path="tools/acloud" name="platform/tools/acloud" groups="tools,vts,projectarch,pdk,tradefed" />
+  <project path="tools/adt/idea" name="platform/tools/adt/idea" groups="notdefault,tools" />
+  <project path="tools/apifinder" name="platform/tools/apifinder" groups="pdk,tools" />
+  <project path="tools/apksig" name="platform/tools/apksig" groups="pdk,tradefed" />
+  <project path="tools/apkzlib" name="platform/tools/apkzlib" groups="pdk,tradefed" />
+  <project path="tools/asuite" name="platform/tools/asuite" groups="pdk" />
+  <project path="tools/base" name="platform/tools/base" groups="notdefault,tools" />
+  <project path="tools/build" name="platform/tools/build" groups="notdefault,tools" />
+  <project path="tools/carrier_settings" name="platform/tools/carrier_settings" groups="tools" />
+  <project path="tools/currysrc" name="platform/tools/currysrc" groups="pdk" />
+  <project path="tools/dexter" name="platform/tools/dexter" groups="tools,pdk-fs" />
+  <project path="tools/doc_generation" name="platform/tools/doc_generation" groups="tools,pdk" />
+  <project path="tools/external_updater" name="platform/tools/external_updater" groups="tools" />
+  <project path="tools/external/fat32lib" name="platform/tools/external/fat32lib" groups="tools" />
+  <project path="tools/idea" name="platform/tools/idea" groups="notdefault,tools" />
+  <project path="tools/loganalysis" name="platform/tools/loganalysis" groups="nopresubmit,pdk,tradefed" revision="android-s-beta-4"/>
   <project path="tools/tradefederation/core" name="platform-tools-tradefederation" groups="pdk,tradefed" remote="riscv-android" revision="riscv64-android-12.0.0_dev"/>
 
   <!-- default changed aosp public git. -->
@@ -973,8 +997,6 @@
   <project path="packages/wallpapers/ImageWallpaper" name="platform/packages/wallpapers/ImageWallpaper" groups="pdk-fs" />
   <project path="packages/wallpapers/LivePicker" name="platform/packages/wallpapers/LivePicker" groups="pdk-fs" />
   <project path="pdk" name="platform/pdk" groups="pdk" />
-  <project path="prebuilts/abi-dumps/ndk" name="platform/prebuilts/abi-dumps/ndk" groups="pdk-fs" clone-depth="1" />
-  <project path="prebuilts/abi-dumps/platform" name="platform/prebuilts/abi-dumps/platform" groups="pdk-fs" clone-depth="1" />
   <project path="prebuilts/asuite" name="platform/prebuilts/asuite" groups="pdk" clone-depth="1" />
   <project path="prebuilts/bazel/darwin-x86_64" name="platform/prebuilts/bazel/darwin-x86_64" groups="darwin,pdk" clone-depth="1" />
   <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" groups="linux,pdk" clone-depth="1" />
@@ -1075,34 +1097,12 @@
   <project path="test/vti/dashboard" name="platform/test/vti/dashboard" groups="vts,projectarch,pdk" />
   <project path="test/vti/fuzz_test_serving" name="platform/test/vti/fuzz_test_serving" groups="vts,projectarch,pdk" />
   <project path="test/vti/test_serving" name="platform/test/vti/test_serving" groups="vts,projectarch,pdk" />
-  <project path="test/vts" name="platform/test/vts" groups="vts,pdk" />
   <project path="test/vts-testcase/fuzz" name="platform/test/vts-testcase/fuzz" groups="vts,projectarch,pdk" />
   <project path="test/vts-testcase/hal-trace" name="platform/test/vts-testcase/hal-trace" groups="vts,pdk" />
   <project path="test/vts-testcase/kernel" name="platform/test/vts-testcase/kernel" groups="vts,pdk" />
   <project path="test/vts-testcase/nbu" name="platform/test/vts-testcase/nbu" groups="vts,projectarch,pdk" />
   <project path="test/vts-testcase/performance" name="platform/test/vts-testcase/performance" groups="vts,projectarch,pdk" />
   <project path="test/vts-testcase/security" name="platform/test/vts-testcase/security" groups="vts,projectarch,pdk" />
-  <project path="test/vts-testcase/vndk" name="platform/test/vts-testcase/vndk" groups="vts,pdk" />
-  <project path="test/catbox" name="platform/test/catbox" />
-  <project path="toolchain/benchmark" name="toolchain/benchmark" />
-  <project path="toolchain/pgo-profiles" name="toolchain/pgo-profiles" groups="pdk" />
-  <project path="tools/aadevtools" name="platform/tools/aadevtools" groups="pdk" />
-  <project path="tools/acloud" name="platform/tools/acloud" groups="tools,vts,projectarch,pdk,tradefed" />
-  <project path="tools/adt/idea" name="platform/tools/adt/idea" groups="notdefault,tools" />
-  <project path="tools/apifinder" name="platform/tools/apifinder" groups="pdk,tools" />
-  <project path="tools/apksig" name="platform/tools/apksig" groups="pdk,tradefed" />
-  <project path="tools/apkzlib" name="platform/tools/apkzlib" groups="pdk,tradefed" />
-  <project path="tools/asuite" name="platform/tools/asuite" groups="pdk" />
-  <project path="tools/base" name="platform/tools/base" groups="notdefault,tools" />
-  <project path="tools/build" name="platform/tools/build" groups="notdefault,tools" />
-  <project path="tools/carrier_settings" name="platform/tools/carrier_settings" groups="tools" />
-  <project path="tools/currysrc" name="platform/tools/currysrc" groups="pdk" />
-  <project path="tools/dexter" name="platform/tools/dexter" groups="tools,pdk-fs" />
-  <project path="tools/doc_generation" name="platform/tools/doc_generation" groups="tools,pdk" />
-  <project path="tools/external_updater" name="platform/tools/external_updater" groups="tools" />
-  <project path="tools/external/fat32lib" name="platform/tools/external/fat32lib" groups="tools" />
-  <project path="tools/idea" name="platform/tools/idea" groups="notdefault,tools" />
-  <project path="tools/loganalysis" name="platform/tools/loganalysis" groups="nopresubmit,pdk,tradefed" revision="android-s-beta-4"/>
   <project path="tools/metalava" name="platform/tools/metalava" groups="pdk,tools" />
   <project path="tools/motodev" name="platform/tools/motodev" groups="notdefault,motodev" />
   <project path="tools/platform-compat" name="tools/platform-compat" groups="pdk-cw-fs,pdk-fs,pdk" />
