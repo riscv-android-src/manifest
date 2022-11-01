@@ -94,7 +94,8 @@
   <project path="frameworks/proto_logging" name="platform-frameworks-proto_logging" groups="pdk-cw-fs,pdk-fs" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
 
   <project path="hardware/interfaces" name="platform-hardware-interfaces" groups="pdk" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
-  <project path="kernel/prebuilts/5.10/riscv64" name="kernel-prebuilts-5.10-riscv64" groups="pdk" remote="riscv-android" clone-depth="1" revision="riscv64-android-12.0.0_dev_bk" />
+  <project path="kernel/prebuilts/5.10/riscv64" name="kernel-prebuilts-5.10-riscv64" groups="pdk" remote="riscv-android" clone-depth="1" revision="riscv64-android-12.0.0_dev" />
+  <project path="kernel/prebuilts/common-modules/virtual-device/5.10/riscv64" name="kernel-prebuilts-common-modules-virtual-device-5.10-riscv64" groups="pdk" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="libcore" name="platform-libcore" groups="pdk" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="platform_testing" name="platform-platform_testing" groups="pdk-fs,pdk-cw-fs,cts" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="packages/apps/Bluetooth" name="platform-packages-apps-Bluetooth" groups="pdk-cw-fs,pdk-fs" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
@@ -108,7 +109,7 @@
   <project path="prebuilts/abi-dumps/vndk" name="platform-prebuilts-abi-dumps-vndk" groups="pdk-fs" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="prebuilts/build-tools" name="platform-prebuilts-build-tools" groups="pdk" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="prebuilts/clang/host/linux-x86" name="platform-prebuilts-clang-host-linux-x86" groups="pdk" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
-  <project path="prebuilts/android-emulator" name="platform-prebuilts-android-emulator" groups="pdk-fs" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev_bk" />
+  <project path="prebuilts/android-emulator" name="platform-prebuilts-android-emulator" groups="pdk-fs" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="prebuilts/misc" name="platform-prebuilts-misc" groups="pdk" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="prebuilts/ndk" name="platform-prebuilts-ndk" groups="pdk" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
   <project path="prebuilts/runtime" name="platform-prebuilts-runtime" groups="pdk" clone-depth="1" remote="riscv-android" revision="riscv64-android-12.0.0_dev" />
